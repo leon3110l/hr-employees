@@ -19,6 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+
+Drop Database if exists `hr`;
+CREATE Database `hr`;
+use `hr`;s
 -- Database: `hr`
 --
 
