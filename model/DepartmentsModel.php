@@ -22,4 +22,20 @@ class DepartmentsModel {
         );
     }
 
+    public function delete($id = NULL) {
+        if($id) {
+            $this->dataHandler->deleteData(
+                "DELETE FROM `departments` WHERE `department_id` = :id",
+                [
+                    ":id" => $id
+                ]
+            );
+            return "record with id $id has been deleted";
+
+        } else {
+            return "no id has been given";
+        }
+
+    }
+
 }
