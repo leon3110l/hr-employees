@@ -47,11 +47,18 @@ class HomeController {
     }
 
     public function departmentsUpdate($id = null) {
-        $data = $this->departments->update($id);
+        $status = $this->departments->update($id);
 
-        // $table = HTMLElements::table($data, "table");
+        if ($status == "showSuccess") {
+            // code...
+        }
 
-        // include "view/table.php";
-        echo $data;
+        else if ($status == "showForm") {
+            include "view/updateForm.php";
+        }
+
+        else if ($status == "showFailure1") {
+
+        }
     }
 }
