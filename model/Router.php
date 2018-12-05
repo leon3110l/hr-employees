@@ -9,10 +9,6 @@ class Router {
     {
         $url = $_SERVER['REQUEST_URI'];
 
-        if(DEV) {
-            $url = str_replace(DEV_DIR, "", $_SERVER["REQUEST_URI"]);
-        }
-
         $packets = (explode("/", trim($url, "/")));
 
         $this->determineDestination($packets);
