@@ -84,7 +84,7 @@ class HTMLElements {
 
         $array = ArrayHelper::to2DArray($array);
 
-        $output = "<div class='table-responsive'>";
+        $output = "<div class='table-responsive table-sm'>";
         $output .= "<table class='$tableClass'>";
         $output .= "<thead class='thead-light'>";
 
