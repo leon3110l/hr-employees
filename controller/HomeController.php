@@ -7,6 +7,7 @@ class HomeController {
 
     public function __construct() {
         $this->employees = new EmployeesModel();
+        $this->departments = new DepartmentsModel();
     }
 
     public function home($id = null) {
@@ -16,5 +17,12 @@ class HomeController {
 
         include "view/table.php";
     }
+
+    public function departments($id = null) {
+        $data = $this->departments->read($id);
+
+        $table = HTMLElements::table($data, "table");
+
+        include "view/table.php";)
 
 }
