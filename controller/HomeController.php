@@ -63,4 +63,8 @@ class HomeController {
 
         }
     }
+
+    public function create() {
+        include "view/create.php";
+    }
 }
