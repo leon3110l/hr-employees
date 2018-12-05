@@ -37,4 +37,37 @@ class DepartmentsModel {
         }
     }
 
+    public function update($id = NULL) {
+        // $department_id = $_POST['department_id'];
+
+        if (isset($_POST) && isset($_POST['submit']) && $id) {
+            $department_name = $_POST['department_name'];
+            $location_id = $_POST['location_id'];
+            $manager_id = $_POST['manager_id'];
+
+            $this->dataHandler->updateData(
+                "UPDATE `departments`
+                SET `department_id`= :department_id,`department_name`= :department_name,`location_id`= :location_id,`manager_id`= :manager_id
+                WHERE department_id = :id",
+                [
+                    ":department_id" => $department_id,
+                    ":department_name" => $department_name,
+                    ":location_id" => $location_id,
+                    ":manager_id" => $manager_id,
+                    ":id" => $id,
+                ]
+            );
+            return "showSuccess";
+        }
+
+        // show form
+        else if($id) {
+            return "showForm";
+
+        } else {
+            return "showFailure1";
+        }
+
+    }
+
 }
