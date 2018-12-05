@@ -54,4 +54,8 @@ class HomeController {
         // include "view/table.php";
         echo $data;
     }
+
+    public function create() {
+        include "view/create.php";
+    }
 }
