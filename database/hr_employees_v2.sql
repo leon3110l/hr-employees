@@ -22,7 +22,7 @@ SET time_zone = "+00:00";
 
 Drop Database if exists `hr`;
 CREATE Database `hr`;
-use `hr`;s
+use `hr`;
 -- Database: `hr`
 --
 
