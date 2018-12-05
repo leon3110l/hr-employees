@@ -1,15 +1,15 @@
 <?php
 /**
  * The DataHandler used in the model
- * 
+ *
  * @category   Model
  * @author     Leon in 't Veld <leon3110l@gmail.com>
  */
 class DataHandler {
     /**
-     * 
+     *
      * a pdo instance
-     * 
+     *
      * @var pdo
      * @access public
      */
@@ -98,7 +98,7 @@ class DataHandler {
         $sth->execute($bindings);
         return $this->pdo->lastInsertId();
     }
-    
+
     /**
      * reads data from a database
      *
@@ -123,7 +123,7 @@ class DataHandler {
         } else {
             return $sth->fetch();
         }
-        
+
     }
 
     /**
@@ -136,7 +136,7 @@ class DataHandler {
     public function updateData(string $sql, array $bindings = []) {
         $sth = $this->pdo->prepare($sql);
         $sth->execute($bindings);
-        return $this->pdo->lastInsertId();        
+        return $this->pdo->lastInsertId();
     }
 
     /**
@@ -186,7 +186,7 @@ class DataHandler {
 
         $sql = preg_replace("/LIMIT [0-9]+ OFFSET [0-9]+/", "", $this->lastSelect["sql"]);
         $sql = "SELECT COUNT(*) AS count FROM (" . $sql . ") AS countTable";
-                
+
         $count =  $this->readData(
             $sql,
             $this->lastSelect["bindings"],
