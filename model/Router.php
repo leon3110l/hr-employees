@@ -1,23 +1,21 @@
 <?php
-
 /**
  * Router class
  */
 class Router {
-
+    /**
+     * the constructor
+     */
     public function __construct()
     {
         $url = $_SERVER['REQUEST_URI'];
-
         if(HTTP_DIR) {
             $url = str_replace(HTTP_DIR, "", $_SERVER["REQUEST_URI"]);
         }
-
+        $url = explode("?", $url)[0];
         $packets = (explode("/", trim($url, "/")));
-
         $this->determineDestination($packets);
     }
-
     /**
      * 
      * determines the dest
@@ -26,13 +24,15 @@ class Router {
      * @return void
      */
     public function determineDestination($packets){
-        if (isset($packets[0]) && !empty($packets[0]) && isset($packets[1]) && !empty($packets[1])) {
-            $this->sendToDestination($packets[0], $packets[1], array_slice($packets, 2));
-        } else {
-            echo "verkeerde url";
-        }
+        $classname = "home";
+        $method = "home";
+        if(isset($packets[0]) && !empty($packets[0]))
+            $classname = $packets[0];
+        if(isset($packets[1]) && !empty($packets[1]))
+            $method = $packets[1];
+        $classname = ucfirst($classname) . "Controller";
+        $this->sendToDestination($classname, $method, array_slice($packets, 2));
     }
-
     /**
      * 
      * sends the stuff to the dest
@@ -48,8 +48,7 @@ class Router {
         require_once($class);
         //Create object and call method
         $obj = new $classname();
-            die(call_user_func_array(array($obj, $method),$params));
+        die(call_user_func_array(array($obj, $method),$params));
     }
 }
-
 ?>
