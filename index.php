@@ -1,8 +1,5 @@
 <?php
-
-define("APP_DIR", __DIR__);
-define("DEV", true);
-define("DEV_DIR", "");
+require "config.php";
 
 require "model/Router.php";
 
