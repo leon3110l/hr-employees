@@ -8,6 +8,19 @@
     <title>table</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?= HTTP_DIR ?>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= HTTP_DIR ?>/home/departments">Departments</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container mt-5">
         <?= $table ?>
     </div>
