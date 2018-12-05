@@ -50,10 +50,12 @@ class HomeController {
         $status = $this->departments->update($id);
 
         if ($status == "showSuccess") {
-            // code...
+            header("location: ".  HTTP_DIR . "/home/departments/$id");
         }
 
         else if ($status == "showForm") {
+            $data = $this->departments->read($id);
+            $data = $data[0];
             include "view/updateForm.php";
         }
 

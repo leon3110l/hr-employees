@@ -47,10 +47,9 @@ class DepartmentsModel {
 
             $this->dataHandler->updateData(
                 "UPDATE `departments`
-                SET `department_id`= :department_id,`department_name`= :department_name,`location_id`= :location_id,`manager_id`= :manager_id
+                SET `department_name`= :department_name,`location_id`= :location_id,`manager_id`= :manager_id
                 WHERE department_id = :id",
                 [
-                    ":department_id" => $department_id,
                     ":department_name" => $department_name,
                     ":location_id" => $location_id,
                     ":manager_id" => $manager_id,

@@ -5,18 +5,15 @@
         <title>update form</title>
     </head>
     <body>
-        <form class="" action="index.html" method="post">
-            <label for="department_id">department_id</label><br>
-            <input type="number" name="department_id" id="department_id" value=""><br><br>
-
+        <form class="" action="" method="post">
             <label for="department_name">department_name</label><br>
-            <input type="txt" name="department_name" id="department_name" value=""><br><br>
+            <input type="txt" name="department_name" id="department_name" value="<?php echo $data['department_name']?>"><br><br>
 
             <label for="location_id">location_id</label><br>
-            <input type="number" name="location_id" id="location_id" value=""><br><br>
+            <input type="number" name="location_id" id="location_id" value="<?php echo $data['location_id']?>"><br><br>
 
             <label for="manager_id">manager_id</label><br>
-            <input type="number" name="manager_id" value=""><br><br>
+            <input type="number" name="manager_id" value="<?php echo $data['manager_id']?>"><br><br>
 
             <input type="submit" name="submit" value="verstuur">
         </form>
