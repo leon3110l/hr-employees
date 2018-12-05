@@ -8,8 +8,8 @@
     <title>table</title>
 </head>
 <body>
-    
-    <?= $table ?>
-
+    <div class="container mt-5">
+        <?= $table ?>
+    </div>
 </body>
 </html>
