@@ -23,7 +23,7 @@ class HomeController {
 
     public function addButtons($array) {
         foreach ($array as $key => $value) {
-            $array[$key]["actions"] = "<a href='".HTTP_DIR."/home/home/$value[employee_id]'>read</a>";
+            $array[$key]["actions"] = "<a class='btn btn-primary' href='".HTTP_DIR."/home/home/$value[employee_id]'>read</a>";
         }
 
         return $array;
