@@ -1,5 +1,6 @@
 <?php
 
+require_once "model/DepartmentsModel.php";
 require_once "model/EmployeesModel.php";
 require_once "model/HTMLElements.php";
 
@@ -23,6 +24,6 @@ class HomeController {
 
         $table = HTMLElements::table($data, "table");
 
-        include "view/table.php";)
-
+        include "view/table.php";
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-require "DataHandler.php";
+require_once "DataHandler.php";
 
 class EmployeesModel {
 
