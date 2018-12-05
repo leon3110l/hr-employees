@@ -1,8 +1,7 @@
 <?php
-
 require_once "DataHandler.php";
 
-class EmployeesModel {
+class DepartmentsModel {
 
     public function __construct() {
         $this->dataHandler = new DataHandler(DB_HOST, DB_DB, DB_USERNAME, DB_PASSWORD);
@@ -12,14 +11,14 @@ class EmployeesModel {
 
         if($id)
             return $this->dataHandler->readData(
-                "SELECT * FROM `employees` WHERE `employee_id` = :id",
+                "SELECT * FROM `departments` WHERE `department_id` = :id",
                 [
                     ":id" => $id
                 ]
             );
 
         return $this->dataHandler->readData(
-            "SELECT * FROM `employees`"
+            "SELECT * FROM `departments`"
         );
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+require_once "model/DepartmentsModel.php";
 require_once "model/EmployeesModel.php";
 require_once "model/HTMLElements.php";
 
@@ -7,6 +8,7 @@ class HomeController {
 
     public function __construct() {
         $this->employees = new EmployeesModel();
+        $this->departments = new DepartmentsModel();
     }
 
     public function home($id = null) {
@@ -27,4 +29,11 @@ class HomeController {
         return $array;
     }
 
+    public function departments($id = null) {
+        $data = $this->departments->read($id);
+
+        $table = HTMLElements::table($data, "table");
+
+        include "view/table.php";
+    }
 }
