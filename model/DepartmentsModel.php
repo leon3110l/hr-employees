@@ -35,7 +35,29 @@ class DepartmentsModel {
         } else {
             return "no id has been given";
         }
+    }
+
+    public function update($id = NULL) {
+
+        if (isset($_POST) && $_POST['isset']) {
+            
+        }
+
+        if($id) {
+            $this->dataHandler->updateData(
+                "DELETE FROM `departments` WHERE `department_id` = :id",
+                [
+                    ":id" => $id
+                ]
+            );
+            return "record with id $id has been updated";
+
+        } else {
+            return "no id has been given";
+        }
 
     }
+
+    updateData
 
 }

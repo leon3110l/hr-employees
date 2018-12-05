@@ -27,8 +27,17 @@ class HomeController {
         include "view/table.php";
     }
 
-    function departmentsDelete($id = null) {
+    public function departmentsDelete($id = null) {
         $data = $this->departments->delete($id);
+
+        // $table = HTMLElements::table($data, "table");
+
+        // include "view/table.php";
+        echo $data;
+    }
+
+    public function departmentsUpdate($id = null) {
+        $data = $this->departments->update($id);
 
         // $table = HTMLElements::table($data, "table");
 
